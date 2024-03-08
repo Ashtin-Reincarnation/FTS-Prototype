@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://cyu521l8c7fnm"]
+
+[ext_resource type="Script" path="res://bowTest.gd" id="1_8cmub"]
+[ext_resource type="Texture2D" uid="uid://ciuweohsugjm" path="res://assets/robinHood_ v1.1/weapons_.png" id="1_qaw8l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_637xy"]
+size = Vector2(3, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35f77"]
+atlas = ExtResource("1_qaw8l")
+region = Rect2(12, 0, 12, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_me6e6"]
+atlas = ExtResource("1_qaw8l")
+region = Rect2(24, 0, 12, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyfhu"]
+atlas = ExtResource("1_qaw8l")
+region = Rect2(36, 0, 12, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_81nua"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35f77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_me6e6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyfhu")
+}],
+"loop": false,
+"name": &"bow",
+"speed": 2.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_8cmub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_637xy")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_81nua")
+animation = &"bow"

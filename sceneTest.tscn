@@ -1,0 +1,177 @@
+[gd_scene load_steps=12 format=3 uid="uid://b60spv1604x1t"]
+
+[ext_resource type="Script" path="res://sceneTest.gd" id="1_7ifxy"]
+[ext_resource type="TileSet" uid="uid://vcihengg3hes" path="res://assets/tilemap1.tres" id="2_6hwac"]
+[ext_resource type="PackedScene" uid="uid://cd44pbe63r8g" path="res://playerTest.tscn" id="2_e7w5r"]
+[ext_resource type="PackedScene" uid="uid://v68ncelvhnnw" path="res://tree.tscn" id="11_sqau5"]
+[ext_resource type="Script" path="res://obstacle.gd" id="12_bwjhb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocn37"]
+size = Vector2(54, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqyj6"]
+size = Vector2(6, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbit0"]
+size = Vector2(22, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wou5w"]
+size = Vector2(6, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6n1j6"]
+size = Vector2(12, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygoh8"]
+size = Vector2(6, 3)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_7ifxy")
+
+[node name="UnderTileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_6hwac")
+format = 2
+layer_0/name = "Grass"
+layer_0/tile_data = PackedInt32Array(0, 65544, 1, 65536, 65544, 2, 131072, 65544, 4, 196608, 655368, 4, 262144, 720904, 3, 327680, 131080, 2, 393216, 327688, 5, 458752, 393224, 6, 524288, 393224, 6, 1, 131080, 1, 65537, 589832, 2, 131073, 458760, 1, 196609, 262152, 4, 262145, 131080, 2, 327681, 655368, 4, 393217, 655368, 4, 458753, 131080, 2, 524289, 655368, 2, 2, 458760, 2, 65538, 655368, 2, 131074, 655368, 3, 196610, 196616, 4, 262146, 131080, 2, 327682, 131080, 2, 393218, 131080, 2, 458754, 589832, 2, 524290, 720904, 1, 3, 131080, 2, 65539, 131080, 2, 131075, 524296, 1, 196611, 262152, 4, 262147, 131080, 2, 327683, 131080, 2, 393219, 131080, 2, 458755, 131080, 2, 524291, 720904, 4, 4, 131080, 2, 65540, 589832, 2, 131076, 393224, 3, 196612, 393224, 4, 262148, 131080, 2, 327684, 131080, 2, 393220, 131080, 2, 458756, 655368, 2, 524292, 131080, 2, 5, 131080, 2, 65541, 655368, 1, 131077, 458760, 3, 196613, 458760, 4, 262149, 131080, 2, 327685, 131080, 2, 393221, 131080, 2, 458757, 131080, 2, 524293, 131080, 2, 6, 393224, 2, 65542, 720904, 4, 131078, 524296, 3, 196614, 524296, 4, 262150, 131080, 2, 327686, 131080, 2, 393222, 131080, 2, 458758, 131080, 2, 524294, 655368, 3, 7, 327688, 1, 65543, 327688, 2, 131079, 589832, 3, 196615, 589832, 4, 262151, 131080, 2, 327687, 655368, 2, 393223, 131080, 2, 458759, 589832, 1, 524295, 131080, 2, 8, 524296, 6, 65544, 1245192, 6, 131080, 131080, 2, 262152, 131080, 2, 327688, 131080, 2, 393224, 131080, 2, 458760, 131080, 2, 524296, 131080, 2, 9, 917512, 7, 65545, 131080, 5, 131081, 720904, 2, 196617, 131080, 4, 262153, 131080, 2, 327689, 131080, 2, 393225, 131080, 2, 458761, 131080, 2, 524297, 720904, 2, 10, 917512, 7, 65546, 131080, 5, 131082, 196616, 3, 196618, 196616, 4, 262154, 131080, 2, 327690, 131080, 2, 393226, 655368, 4, 458762, 131080, 2, 524298, 655368, 4, 11, 917512, 7, 65547, 131080, 5, 131083, 131080, 2, 196619, 131080, 2, 262155, 131080, 2, 327691, 131080, 2, 393227, 131080, 2, 458763, 131080, 2, 524299, 720904, 2, 12, 917512, 7, 65548, 196616, 5, 131084, 196616, 6, 196620, 262152, 6, 262156, 720904, 1, 327692, 131080, 2, 393228, 131080, 2, 458764, 131080, 2, 524300, 655368, 4, 13, 917512, 7, 65549, 917512, 7, 131085, 917512, 7, 196621, 458760, 5, 262157, 131080, 2, 327693, 131080, 2, 393229, 131080, 2, 458765, 131080, 2, 524301, 655368, 1, 14, 917512, 7, 65550, 917512, 7, 131086, 917512, 7, 196622, 458760, 5, 262158, 131080, 2, 327694, 131080, 2, 393230, 589832, 1, 458766, 655368, 4, 524302, 655368, 2, 15, 917512, 7, 65551, 917512, 7, 131087, 917512, 7, 458767, 720904, 3, 524303, 131080, 2, 196623, 524296, 5, 262159, 262152, 6, 327695, 720904, 2, 393231, 655368, 4, 16, 917512, 7, 65552, 917512, 7, 131088, 917512, 7, 196624, 917512, 7, 262160, 851976, 5, 327696, 196616, 6, 393232, 196616, 6, 458768, 196616, 6, 524304, 196616, 6, 589839, 131080, 7, 589838, 131080, 7, 589837, 131080, 7, 589836, 131080, 7, 589835, 131080, 7, 589834, 262152, 5, 589833, 131080, 2, 589832, 131080, 2, 589831, 131080, 2, 589830, 131080, 2, 589829, 131080, 2, 589828, 131080, 2, 589827, 131080, 2, 589826, 327688, 5, 589825, 131080, 7, 589824, 393224, 7, -65521, 917512, 7, -65522, 917512, 7, -65523, 917512, 7, -65524, 917512, 7, -65525, 917512, 7, -65526, 917512, 7, -65527, 917512, 7, -65528, 524296, 5, -65529, 589832, 6, -65530, 327688, 1, -65531, 131080, 1, -65532, 131080, 1, -65533, 131080, 1, -65534, 65544, 1, -65535, 131080, 3, -65536, 655368, 6, 589823, 262152, 7, 524287, 262152, 7, 458751, 65544, 7, 393215, 65544, 6, 327679, 65544, 6, 262143, 65544, 6, 196607, 65544, 6, 131071, 65544, 6, 65535, 65544, 6, -1, 65544, 5, -65520, 917512, 7, 589840, 196616, 7, 655359, 262152, 7, -65539, 262152, 7, -3, 262152, 7, 65533, 262152, 7, 131069, 262152, 7, 196605, 262152, 7, 262141, 262152, 7, 327677, 262152, 7, 393213, 262152, 7, 458749, 262152, 7, 524285, 262152, 7, 589821, 262152, 7, 655357, 262152, 7, 720893, 262152, 7, -65538, 262152, 7, -2, 262152, 7, 65534, 262152, 7, 131070, 262152, 7, 196606, 262152, 7, 262142, 262152, 7, 327678, 262152, 7, 393214, 262152, 7, 458750, 262152, 7, 524286, 262152, 7, 589822, 262152, 7, 655358, 262152, 7, 720894, 262152, 7, 786429, 262152, 7, 786430, 262152, 7, 720895, 262152, 7, 786431, 262152, 7, 655360, 262152, 7, 720896, 262152, 7, 655361, 262152, 7, 720897, 262152, 7, 655362, 65544, 7, 720898, 262152, 7, 655363, 131080, 7, 720899, 262152, 7, 655364, 131080, 7, 720900, 262152, 7, 655365, 131080, 7, 720901, 262152, 7, 655366, 131080, 7, 720902, 262152, 7, 655367, 131080, 7, 720903, 262152, 7, 655368, 131080, 7, 720904, 262152, 7, 655369, 131080, 7, 720905, 262152, 7, 655370, 196616, 7, 720906, 262152, 7, 655371, 262152, 7, 720907, 262152, 7, 655372, 262152, 7, 720908, 262152, 7, 655373, 262152, 7, 720909, 262152, 7, 655374, 262152, 7, 720910, 262152, 7, 655375, 262152, 7, 720911, 262152, 7, 655376, 262152, 7, 720912, 262152, 7, 655377, 262152, 7, 720913, 262152, 7, 655378, 262152, 7, 720914, 262152, 7, -196591, 262152, 7, -131055, 262152, 7, -65519, 262152, 7, 17, 262152, 7, 65553, 262152, 7, 131089, 262152, 7, 196625, 262152, 7, 262161, 262152, 7, 327697, 262152, 7, 393233, 262152, 7, 458769, 262152, 7, 524305, 262152, 7, 589841, 262152, 7, -196590, 262152, 7, -131054, 262152, 7, -65518, 262152, 7, 18, 262152, 7, 65554, 262152, 7, 131090, 262152, 7, 196626, 262152, 7, 262162, 262152, 7, 327698, 262152, 7, 393234, 262152, 7, 458770, 262152, 7, 524306, 262152, 7, 589842, 262152, 7, -131075, 262152, 7, -131074, 262152, 7, -131073, 262152, 7, -196608, 393224, 5, -196607, 458760, 5, -131071, 720904, 3, -196606, 458760, 5, -131070, 720904, 4, -196605, 458760, 5, -131069, 655368, 4, -196604, 458760, 5, -131068, 720904, 1, -196603, 458760, 5, -131067, 131080, 2, -196602, 458760, 5, -131066, 720904, 2, -196601, 524296, 5, -131065, 524296, 6, -196600, 262152, 7, -131064, 262152, 7, -196599, 262152, 7, -131063, 262152, 7, -196598, 262152, 7, -131062, 262152, 7, -196597, 262152, 7, -131061, 262152, 7, -196596, 262152, 7, -131060, 262152, 7, -196595, 262152, 7, -131059, 262152, 7, -196594, 262152, 7, -131058, 262152, 7, -196593, 262152, 7, -131057, 262152, 7, -196592, 262152, 7, -131056, 262152, 7, 196616, 131080, 4, -131072, 393224, 6, -65537, 262152, 7)
+layer_1/name = "Walls"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(393222, 262155, 5, 458758, 262155, 6, 393221, 196619, 5, 458757, 196619, 6, 393219, 327691, 9, 458755, 327691, 10, 327683, 65547, 5, 393220, 196619, 5, 458756, 196619, 6, 393224, 65547, 9, 262152, 327691, 5, 327688, 327691, 6, 262153, 262155, 5, 327689, 262155, 6)
+layer_2/name = "Forestry"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array(262148, 131081, 7, 196609, 458761, 7, 262145, 458761, 8, 327684, 131081, 8, 393228, 131081, 3, 458764, 131081, 4, 393229, 196617, 3, 458765, 196617, 4, 262158, 196617, 1, 327694, 196617, 2, 458762, 196617, 1, 524298, 196617, 2, 458767, 196617, 1, 524303, 196617, 2, 262155, 196617, 1, 327691, 196617, 2, 524294, 196617, 1, 589830, 196617, 2, 458753, 196617, 2, 393217, 196617, 1, -65531, 196617, 1, 5, 196617, 2)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(133, 72)
+zoom = Vector2(4.88, 4.88)
+
+[node name="Player" parent="." instance=ExtResource("2_e7w5r")]
+position = Vector2(107, 73)
+collision_mask = 2
+motion_mode = 1
+
+[node name="OverTileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_6hwac")
+format = 2
+layer_0/tile_data = PackedInt32Array(393221, 196619, 5, 393220, 196619, 5, 393219, 327691, 9, 393222, 262155, 5, 327683, 65547, 5, 262152, 327691, 5, 262153, 458763, 5, 196609, 458761, 7, 524294, 196617, 1, 458762, 196617, 1, 458767, 196617, 1, 262158, 196617, 1, 262155, 196617, 1, 393228, 131081, 3, 393229, 196617, 3, 393217, 196617, 1, -65531, 196617, 1)
+
+[node name="Obstacles Folder" type="Node" parent="."]
+
+[node name="TreeCol" parent="Obstacles Folder" instance=ExtResource("11_sqau5")]
+position = Vector2(88, 2)
+
+[node name="TreeCol2" parent="Obstacles Folder" instance=ExtResource("11_sqau5")]
+position = Vector2(24, 114)
+
+[node name="TreeCol3" parent="Obstacles Folder" instance=ExtResource("11_sqau5")]
+position = Vector2(104, 146)
+
+[node name="TreeCol4" parent="Obstacles Folder" instance=ExtResource("11_sqau5")]
+position = Vector2(168, 130)
+
+[node name="TreeCol5" parent="Obstacles Folder" instance=ExtResource("11_sqau5")]
+position = Vector2(184, 82)
+
+[node name="TreeCol6" parent="Obstacles Folder" instance=ExtResource("11_sqau5")]
+position = Vector2(232, 82)
+
+[node name="TreeCol7" parent="Obstacles Folder" instance=ExtResource("11_sqau5")]
+position = Vector2(248, 130)
+
+[node name="WallBundle1" type="StaticBody2D" parent="Obstacles Folder"]
+position = Vector2(57, 114)
+collision_layer = 2
+script = ExtResource("12_bwjhb")
+
+[node name="BottomCol" type="CollisionShape2D" parent="Obstacles Folder/WallBundle1"]
+position = Vector2(23, 3.5)
+shape = SubResource("RectangleShape2D_ocn37")
+
+[node name="WallCol" type="CollisionShape2D" parent="Obstacles Folder/WallBundle1"]
+position = Vector2(-1, -4)
+shape = SubResource("RectangleShape2D_uqyj6")
+
+[node name="ArrowCols" type="Area2D" parent="Obstacles Folder/WallBundle1"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles Folder/WallBundle1/ArrowCols"]
+polygon = PackedVector2Array(-4, -21, -4, 9, 50, 9, 50, -5, 2, -5, 2, -21)
+
+[node name="WallBundle2" type="StaticBody2D" parent="Obstacles Folder"]
+position = Vector2(136, 80)
+collision_layer = 2
+script = ExtResource("12_bwjhb")
+
+[node name="BottomCol" type="CollisionShape2D" parent="Obstacles Folder/WallBundle2"]
+position = Vector2(8, 5.5)
+shape = SubResource("RectangleShape2D_mbit0")
+
+[node name="WallCol" type="CollisionShape2D" parent="Obstacles Folder/WallBundle2"]
+position = Vector2(0, 13.5)
+shape = SubResource("RectangleShape2D_wou5w")
+
+[node name="ArrowCols" type="Area2D" parent="Obstacles Folder/WallBundle2"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles Folder/WallBundle2/ArrowCols"]
+position = Vector2(-17, 13)
+polygon = PackedVector2Array(14, -16, 14, 14, 20, 14, 20, -2, 36, -2, 36, -16)
+
+[node name="Fire" type="StaticBody2D" parent="Obstacles Folder"]
+position = Vector2(24, 70)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles Folder/Fire"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_6n1j6")
+
+[node name="Grave" type="StaticBody2D" parent="Obstacles Folder"]
+position = Vector2(72, 83)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles Folder/Grave"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_ygoh8")
+
+[node name="Rock" type="StaticBody2D" parent="Obstacles Folder"]
+position = Vector2(208, 112)
+collision_layer = 2
+script = ExtResource("12_bwjhb")
+
+[node name="Player Collider" type="CollisionPolygon2D" parent="Obstacles Folder/Rock"]
+polygon = PackedVector2Array(-10, 0, 10, 0, 10, 0, 10, 7, 9, 8, 6, 8, 6, 10, 5, 11, -5, 11, -6, 10, -6, 9, -9, 9, -10, 8)
+
+[node name="ArrowCols" type="Area2D" parent="Obstacles Folder/Rock"]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles Folder/Rock/ArrowCols"]
+position = Vector2(-1, -1)
+polygon = PackedVector2Array(-8, 8, -8, -2, -7, -3, -5, -3, 6, -5, 9, -5, 10, -4, 10, 7, 9, 8, 6, 8, 6, 10, 5, 11, -3, 11, -4, 10, -4, 9, -7, 9)
+
+[node name="LandMassStatic" type="StaticBody2D" parent="Obstacles Folder"]
+position = Vector2(49, 30)
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles Folder/LandMassStatic"]
+polygon = PackedVector2Array(-10, 30, -24, 30, -24, 14, -40, 14, -40, -21, -8, -21, -8, -37, 54, -37, 54, -21, 70, -21, 70, 25, 118, 25, 118, 30, 8, 30, 8, 25, 24, 25, 24, 8, 69, 8, 69, -20, 53, -20, 53, -36, -7, -36, -7, -20, -39, -20, -39, 8, -23, 8, -23, 24, -10, 24)
+
+[node name="OceanMassStatic" type="StaticBody2D" parent="."]
+position = Vector2(-13, 135)
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OceanMassStatic"]
+polygon = PackedVector2Array(6, -32, 22, -32, 22, 16, 54, 16, 54, 32, 180, 32, 180, 16, 276, 16, 276, -62, 319, -62, 318, 57, -36, 57, -36, -76, 6, -76)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="OceanMassStatic"]
+polygon = PackedVector2Array(7, -141, 23.1625, -141.129, 23, -173, 132, -173, 132, -142, 148, -142, 148, -110, 212, -110, 212, -78, 260, -78, 260, -62, 276, -62, 319, -62, 320, -188, -35, -183, -36, -76, 6, -76)
+
+[connection signal="hold" from="Player" to="." method="_on_player_hold"]
+[connection signal="projectile" from="Player" to="." method="_on_player_projectile"]
+[connection signal="body_entered" from="Obstacles Folder/WallBundle1/ArrowCols" to="Obstacles Folder/WallBundle1" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Obstacles Folder/WallBundle2/ArrowCols" to="Obstacles Folder/WallBundle2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Obstacles Folder/Rock/ArrowCols" to="Obstacles Folder/Rock" method="_on_area_2d_body_entered"]
